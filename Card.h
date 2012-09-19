@@ -13,6 +13,7 @@ public:
 	Suit getSuit() { return suit; }
 	Value getValue() { return faceValue; }
 	string name() { return valueName(faceValue) + " of " + suitName(suit); }
+	Card(Suit suit, Value facevalue);
 
 	static string suitName(Suit s);
 	static string valueName(Value v);

@@ -29,3 +29,9 @@ string Card::valueName(Value v) {
 		default: throw std::out_of_range("Face value out of range");
 	}
 }
+
+Card::Card(Suit suit, Value facevalue)
+{
+	Card::suit=suit;
+	Card::faceValue=facevalue;
+};
