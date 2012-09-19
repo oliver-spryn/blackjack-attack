@@ -2,6 +2,7 @@
 #define __CARD_H
 
 #include <string>
+#include "Display.h"
 using std::string;
 
 enum Suit {clubs, diamonds, hearts, spades};
@@ -11,6 +12,8 @@ class Card {
 public:
 	Card(Value faceValue = deuce, Suit suit = clubs) : suit(suit), faceValue(faceValue) {}
 	Suit getSuit() { return suit; }
+	void setSuit(int s);
+	void setValue(int v);
 	Value getValue() { return faceValue; }
 	string name() { return valueName(faceValue) + " of " + suitName(suit); }
 	Card(Suit suit, Value facevalue);
