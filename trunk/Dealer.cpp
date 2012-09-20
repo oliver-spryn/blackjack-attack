@@ -1,23 +1,34 @@
+#include <iostream>
+
+#include "Config.h"
 #include "Dealer.h"
+#include "Display.h";
+
+using std::cout;
+using std::endl;
 
 Dealer::Dealer() {
-	//More stuff
+	cout << Config::GAME_NAME
+		 << endl << endl
+		 << Config::WELCOME_STRING
+		 << endl;
+
+	this->displayMimimiumBettingValues();
 }
 
-void Dealer::createDeck(Card deck[])
-{
-	int i = 0;
-	for(int suit = 0; suit < 4; suit++) {
-		for(int face = 0; face < 13; face++) {
-			deck[i].setSuit(suit);
-			deck[i].setValue(face);
-			i = i + 1;
-		}
+void Dealer::displayMimimiumBettingValues() {
+	vector<int> bettingValues = Config::MINIMUM_BETTING_VALUES;
+	int numberOfChoices = bettingValues.size();
+
+	for (int i = 0; i < numberOfChoices; i ++) {
+		cout << "[" << i + 1 << "] "
+			 << "$" << bettingValues[i]
+		     << " minimum bet"
+			 << endl;
 	}
 }
 
-void Dealer::shuffleDeck(Card deck[])
+void Dealer::createDeck()
 {
-	srand(time(0));
-	random_shuffle(deck[0],deck[52]);
-}
+
+};
