@@ -10,10 +10,11 @@ using std::random_shuffle;
 class Dealer {
 public:
 	Dealer();
-	void createDeck(Card deck[]);
-	void shuffleDeck(Card deck[]); //This function will shuffle the deck created in Dealer.createDeck
+	void createDeck();
 	int getCardValue();
+
 private:
+	void displayMimimiumBettingValues();
 	int cardsvalue;
 	Card deck[52];
 };

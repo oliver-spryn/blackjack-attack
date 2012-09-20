@@ -1,9 +1,8 @@
 #include <iostream>
 
-#include "Config.h"
-#include "Display.h"
+#include "Dealer.h"
 
 int main(int argc, char *argv[]) {
-	std::cout << Config::GAME_NAME;
+	Dealer bootstrap;
 	return 0;
 }
